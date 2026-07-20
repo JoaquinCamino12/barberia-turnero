@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api/turnos/';
+let rawApiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api/turnos/';
+if (rawApiUrl && !rawApiUrl.startsWith('http://') && !rawApiUrl.startsWith('https://')) {
+  rawApiUrl = `https://${rawApiUrl}`;
+}
+const API_URL = rawApiUrl;
+
 
 // Generate time slots from 9:00 to 13:00 and 16:00 to 21:00
 const generateTimeSlots = () => {

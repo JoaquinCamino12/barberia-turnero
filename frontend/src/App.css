@@ -1,0 +1,270 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(18, 18, 18, 0.95);
+  border-bottom: 2px solid var(--color-wood-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: var(--color-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--color-gold);
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-hover);
+  transform: scale(1.05);
+}
+
+/* Services */
+.services {
+  padding: 5rem 2rem;
+  background-color: var(--color-dark-gray);
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--color-black);
+  padding: 2rem;
+  border: 1px solid var(--color-wood-dark);
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-gold);
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #aaa;
+}
+
+/* Reservation Section */
+.reservation {
+  padding: 5rem 2rem;
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+}
+
+.reservation-container {
+  background: var(--color-dark-gray);
+  padding: 3rem;
+  border-radius: 12px;
+  border-top: 5px solid var(--color-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 600px;
+  width: 100%;
+}
+
+.reservation-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-wood-dark);
+  border-radius: 4px;
+  background-color: var(--color-black);
+  color: var(--color-light);
+  font-size: 1rem;
+}
+
+/* Style for date picker icon color (often dark by default) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+/* Time Grid */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time-slot {
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  color: var(--color-black);
+}
+
+.time-slot.free {
+  background-color: white;
+  border-color: #ddd;
+}
+
+.time-slot.free:hover {
+  background-color: #f0f0f0;
+  border-color: var(--color-gold);
+}
+
+.time-slot.selected {
+  background-color: #28a745;
+  color: white;
+  border-color: #1e7e34;
+  transform: scale(1.05);
+}
+
+.time-slot.occupied {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert.success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.alert.error {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+/* Footer */
+.footer {
+  background-color: #0a0a0a;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-wood-dark);
+  margin-top: auto;
+}
+
+.footer p {
+  color: #777;
+  margin-top: 1rem;
+}
+
+.footer-gold {
+  color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .nav-links { display: none; }
+  .reservation-container { padding: 1.5rem; }
+}

@@ -148,8 +148,52 @@
 .reservation-container h2 {
   text-align: center;
   font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
   margin-bottom: 2rem;
 }
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background-color: var(--color-black);
+  color: var(--color-light);
+  border: 1px solid var(--color-wood-dark);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
 
 .form-group {
   margin-bottom: 1.5rem;
